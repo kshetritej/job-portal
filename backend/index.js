@@ -1,19 +1,17 @@
-const dotenv = require("dotenv");
 const colors = require("colors");
-const express = require("express")
-const connectToDB = require("./config/connectToDb");
-const path = require("path");
+const express = require("express");
+const connectToDB = require("./config/connectToDb")
+const {envConfig} = require("./config/config");
 const routes = require("./routes/index.js");
-const PORT = process.env.PORT || 6000;
 
-require("dotenv").config();
-dotenv.config({ path: "./config/config.env" });
+const app = express();
+
+app.use(express.json());
+app.use("/", routes);
+
 connectToDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server Running on Port ${PORT}`.cyan.bold);
+  app.listen(envConfig.PORT, () => {
+    console.log(`Server Running on Port ${envConfig.PORT}`.cyan.bold);
   });
 })
 
-const app = express();
-app.use(express.json());
-app.use("/", routes);
