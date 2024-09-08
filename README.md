@@ -1,11 +1,4 @@
-# Job Portal Project for the Zidio Internship Program
+"# Social-media-pages-internship-" 
 
+This folder contains two files (instagram.html) & (facebook.html) which is used for user accessing their account and authorization.
 
-## Todo
-
-### Backend Development
-- [x] Project Setup \
-- [x] Setup node.js and express \
-- [x] Routings for auth \
-- [] Setup routing for handling api request \
-- [] Database design and setup \
