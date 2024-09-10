@@ -1,5 +1,7 @@
 import React from 'react'
-
+import '../styles/dashboard.css'
+import '../styles/sidebar.css'
+import '../styles/tableicon.css'
 function Header() {
   return (
     <div>
@@ -92,7 +94,7 @@ function Header() {
               <li className="sidebar-item">
                 <a className="sidebar-link" href="./sample-page.html" aria-expanded="false">
                   <span>
-                    <iconify-icon icon="solar:planet-3-bold-duotone" className="fs-6"></iconify-icon>
+                    <iconify-icon icon="solar:planet-3-bold-duotone" style={{ color: 'black' }} className="fs-6"></iconify-icon>
                   </span>
                   <span className="hide-menu">Sample Page</span>
                 </a>
@@ -123,6 +125,15 @@ function Header() {
               </li>
             </ul>
             <div className="navbar-collapse justify-content-end px-0" id="navbarNav">
+
+              <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-end search-border">
+                <input type="text" placeholder='search' className='searchclass' />
+
+              </ul>
+
+
+
+
               <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-end">
                 <a href="#" target="_blank"
                   className="btn btn-primary me-2"><span className="d-none d-md-block">Sign Out</span></a>
