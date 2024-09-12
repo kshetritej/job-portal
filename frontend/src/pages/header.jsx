@@ -1,26 +1,152 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { MagicMotion } from "react-magic-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Stack from 'react-bootstrap/Stack';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+// import { faHistory } from '@fortawesome/pro-regular-svg-icons';
 import '../styles/dashboard.css'
-import '../styles/sidebar.css'
-import '../styles/tableicon.css'
 function Header() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <div>
-      <aside className="left-sidebar">
-        {/* <!-- Sidebar scroll--> */}
-        <div>
-          <div className="nav-small-cap" style={{ textAlign: "center" }}>
-            <a href="./index.html">
-              JOB LISTING
-            </a>
-            <div className="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
-              <i className="ti ti-x fs-8"></i>
-            </div>
+
+      <header>
+        <Navbar expand="lg" className="bg-body-tertiary">
+          <Container fluid>
+
+            <Navbar.Brand href="#">JOB LISTING</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="navbarScroll">
+
+
+
+
+              <div className="me-auto float-start mx-5 my-2 my-lg-0"
+              >
+                <Stack direction="horizontal" gap={5}>
+                  <Form className="d-flex">
+                    <Form.Control
+                      type="search"
+                      placeholder="Search"
+                      className="me-2 form-search"
+                      aria-label="Search"
+                      style={{ marginLeft: '150px', width: '350px' }}
+
+                    />
+                    <Button variant="outline-success">Search</Button>
+                  </Form>
+                </Stack>
+              </div>
+
+
+
+
+              <Nav
+                className="me-auto my-2 my-lg-0 me-auto float-end "
+                style={{ maxHeight: '100px' }}
+                navbarScroll
+              >
+                <a href="#" target="_blank"
+                  className="btn btn-primary me-2"><span className="d-none d-md-block">Sign Out</span></a>
+                <img src="images/profile/user-1.jpg" alt="" width="35" height="35" className="rounded-circle" />
+                <NavDropdown title="Profile" id="navbarScrollingDropdown">
+                  <NavDropdown.Item href="#action3">Settings</NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">
+                    Update resume
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action5">
+                    Edit Profile
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+
+      </header>
+
+
+
+      {/* Sidebar scroll--> */}
+
+      <MagicMotion>
+        <aside className="left-sidebar"
+          style={{
+            backgroundColor: "rgba(238, 238, 238)",
+            padding: "1rem",
+            margin: "1rem 0",
+            borderRadius: "0.65rem",
+            width: isCollapsed ? "1.3rem" : "20rem",
+            fontWeight: "bold",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            overflow: "hidden",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: "0.5rem",
+              alignItems: "center",
+              justifyContent: "space-between",
+            }}
+          >
+            {!isCollapsed && <h4 style={{ margin: 0 }}>MENU</h4>}
+
+            <button
+              style={{ cursor: "pointer", padding: 0, border: 0 }}
+              onClick={() => setIsCollapsed(!isCollapsed)}
+              title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+            >
+              {isCollapsed ? (
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 12.9999V10.9999H15.4853L12.2427 7.75724L13.6569 6.34303L19.3137 11.9999L13.6569 17.6567L12.2427 16.2425L15.4853 12.9999H1Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    d="M20.2877 6V18H22.2877V6H20.2877Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  style={{ minWidth: "24px", minHeight: "24px" }}
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.2877 11.0001V13.0001H7.80237L11.045 16.2428L9.63079 17.657L3.97394 12.0001L9.63079 6.34326L11.045 7.75748L7.80236 11.0001H22.2877Z"
+                    fill="currentColor"
+                  />
+                  <path d="M3 18V6H1V18H3Z" fill="currentColor" />
+                </svg>
+              )}
+            </button>
           </div>
-          {/* <!-- Sidebar navigation--> */}
+
           <nav className="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">
               <li className="nav-small-cap">
-                <i className="nav-small-cap-icon fs-6"></i>
+                <FontAwesomeIcon icon="fa-home" />
                 <span className="hide-menu">Home</span>
               </li>
               <li className="sidebar-item">
@@ -32,7 +158,7 @@ function Header() {
                 </a>
               </li>
               <li className="nav-small-cap">
-                <i className="nav-small-cap-icon fs-6"></i>
+                <FontAwesomeIcon icon="fa-Message" />
                 <span className="hide-menu">JOB Application</span>
               </li>
               <li className="sidebar-item">
@@ -60,7 +186,7 @@ function Header() {
                 </a>
               </li>
               <li className="nav-small-cap">
-                <iconify-icon icon="" className="nav-small-cap-icon fs-6 fs-6"></iconify-icon>
+                <FontAwesomeIcon icon="fa-Gears" />
                 <span className="hide-menu">SETTINGS</span>
               </li>
               <li className="sidebar-item">
@@ -101,71 +227,11 @@ function Header() {
               </li>
             </ul>
           </nav>
-          {/* <!-- End Sidebar navigation --> */}
-        </div>
-        {/* <!-- End Sidebar scroll--> */}
-      </aside>
-
-      <div className="body-wrapper">
-
-
-        <header className="app-header">
-          <nav className="navbar navbar-expand-lg navbar-light">
-            <ul className="navbar-nav">
-              <li className="nav-item d-block d-xl-none">
-                <a className="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
-                  <i className="ti ti-menu-2"></i>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link nav-icon-hover" href="javascript:void(0)">
-                  <i className="ti ti-bell-ringing"></i>
-                  <div className="notification bg-primary rounded-circle"></div>
-                </a>
-              </li>
-            </ul>
-            <div className="navbar-collapse justify-content-end px-0" id="navbarNav">
-
-              <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-end search-border">
-                <input type="text" placeholder='search' className='searchclass' />
-
-              </ul>
+        </aside>
+      </MagicMotion>
 
 
 
-
-              <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                <a href="#" target="_blank"
-                  className="btn btn-primary me-2"><span className="d-none d-md-block">Sign Out</span></a>
-                <li className="nav-item dropdown">
-                  <a className="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    <img src="images/profile/user-1.jpg" alt="" width="35" height="35" className="rounded-circle" />
-                  </a>
-                  <div className="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                    <div className="message-body">
-                      <a href="javascript:void(0)" className="d-flex align-items-center gap-2 dropdown-item">
-                        <i className="ti ti-user fs-6"></i>
-                        <p className="mb-0 fs-3">My Profile</p>
-                      </a>
-                      <a href="javascript:void(0)" className="d-flex align-items-center gap-2 dropdown-item">
-                        <i className="ti ti-mail fs-6"></i>
-                        <p className="mb-0 fs-3">My Account</p>
-                      </a>
-                      <a href="javascript:void(0)" className="d-flex align-items-center gap-2 dropdown-item">
-                        <i className="ti ti-list-check fs-6"></i>
-                        <p className="mb-0 fs-3">My Task</p>
-                      </a>
-                      <a href="./authentication-login.html" className="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </header>
-
-      </div>
 
     </div>
   )
