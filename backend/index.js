@@ -3,11 +3,12 @@ const express = require("express");
 const connectToDB = require("./config/connectToDb")
 const {envConfig} = require("./config/config");
 const routes = require("./routes/index.js");
-
+const JobRouter = require("./routes/job.route.js");
 const app = express();
 
 app.use(express.json());
-app.use("/", routes);
+app.use("/api", routes);
+app.use("/jobs", JobRouter)
 
 connectToDB().then(() => {
   app.listen(envConfig.PORT, () => {
