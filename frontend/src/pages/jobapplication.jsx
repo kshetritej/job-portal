@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import axios from "axios";
+import '../styles/tableicon.css';
 function Jobapplication() {
    
     let appForm = {
@@ -87,7 +88,7 @@ function Jobapplication() {
                                             id="position"
                                             class="form-control"
                                             placeholder="Enter Job Position"
-                                            ref={appForm.postion}
+                                            ref={appForm.position}
                                         />
                                     </div>
 

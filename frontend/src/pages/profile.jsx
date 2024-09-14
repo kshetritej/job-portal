@@ -30,6 +30,8 @@ function Profile() {
                                     <p>Your Lastname</p>
                                     <h4>Email Address:</h4>
                                     <p>your email address </p>
+                                    <h4>Job Seeker/Employer:</h4>
+                                    <p>Job Employer </p>
                                 </div>
                             </div>
 
@@ -50,7 +52,7 @@ function Profile() {
                             <Modal.Body>
                                 <div className="flex flex-col gap-2">
                                     <label>Firstname:</label>
-                                    <input  className="py-3 px-4 rounded-md border text-secondary" />
+                                    <input className="py-3 px-4 rounded-md border text-secondary" />
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label>Lastname:</label>
@@ -59,6 +61,14 @@ function Profile() {
                                 <div className="flex flex-col gap-2">
                                     <label>Email address:</label>
                                     <input type="text-area" className="py-3 px-4 rounded-md border text-secondary" />
+                                </div>
+                                <div className="flex flex-col gap-2 my-2">
+                                    <label>Job Seeker/ Employer:</label>
+                                    <select class="form-control" name="cars" id="cars">
+                                    <option value="0" disabled selected>Select Job Seeker/ Employer</option>
+                                        <option value="volvo">Job Seeker</option>
+                                        <option value="saab">Employer</option>
+                                    </select>
                                 </div>
 
                                 <div className="flex flex-col gap-2">
