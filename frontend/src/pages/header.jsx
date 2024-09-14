@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import '../styles/dashboard.css';
+import '../styles/tableicon.css';
 import { MagicMotion } from "react-magic-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from 'react-bootstrap/Button';
@@ -10,7 +12,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 // import { faHistory } from '@fortawesome/pro-regular-svg-icons';
-import '../styles/dashboard.css'
+
 function Header() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   return (
@@ -84,7 +86,7 @@ function Header() {
             padding: "1rem",
             margin: "1rem 0",
             borderRadius: "0.65rem",
-            width: isCollapsed ? "1.3rem" : "20rem",
+            width: isCollapsed ? "1.3rem" : "23rem",
             fontWeight: "bold",
             display: "flex",
             flexDirection: "column",
@@ -150,7 +152,7 @@ function Header() {
                 <span className="hide-menu">Home</span>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./index.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./index.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:home-smile-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
@@ -159,30 +161,38 @@ function Header() {
               </li>
               <li className="nav-small-cap">
                 <FontAwesomeIcon icon="fa-Message" />
-                <span className="hide-menu">JOB Application</span>
+                <span className="hide-menu">Job Application</span>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./ui-buttons.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./ui-buttons.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:layers-minimalistic-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
-                  <span className="hide-menu">VIEW JOB</span>
+                  <span className="hide-menu">View Job</span>
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./ui-alerts.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:danger-circle-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
-                  <span className="hide-menu">VIEW APPLICATION</span>
+                  <span className="hide-menu">View Application</span>
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./ui-alerts.html" aria-expanded="false">
+                  <span>
+                    <iconify-icon icon="solar:danger-circle-bold-duotone" className="fs-6"></iconify-icon>
+                  </span>
+                  <span className="hide-menu">Upload Job/View Uploaded Job</span>
+                </a>
+              </li>
+              <li className="sidebar-item">
+                <a className="sidebar-link" style={{textDecoration:'none'}}  href="./ui-card.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:bookmark-square-minimalistic-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
-                  <span className="hide-menu">SAVED</span>
+                  <span className="hide-menu">Saved</span>
                 </a>
               </li>
               <li className="nav-small-cap">
@@ -190,7 +200,7 @@ function Header() {
                 <span className="hide-menu">SETTINGS</span>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./authentication-login.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:login-3-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
@@ -198,7 +208,7 @@ function Header() {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./authentication-register.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:user-plus-rounded-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
@@ -210,7 +220,7 @@ function Header() {
                 <span className="hide-menu">EXTRA</span>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./icon-tabler.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:sticker-smile-circle-2-bold-duotone" className="fs-6"></iconify-icon>
                   </span>
@@ -218,7 +228,7 @@ function Header() {
                 </a>
               </li>
               <li className="sidebar-item">
-                <a className="sidebar-link" href="./sample-page.html" aria-expanded="false">
+                <a className="sidebar-link" style={{textDecoration:'none'}} href="./sample-page.html" aria-expanded="false">
                   <span>
                     <iconify-icon icon="solar:planet-3-bold-duotone" style={{ color: 'black' }} className="fs-6"></iconify-icon>
                   </span>

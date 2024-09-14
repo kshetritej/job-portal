@@ -8,6 +8,7 @@ import MayshowHeader from "./pages/mayshowheader";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./pages/footer";
 import Jobapplication from "./pages/jobapplication";
+import Joblisting from "./pages/joblisting";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}/>
         <Route path="/profile" element={<Profile/>}></Route>
         <Route path="/jobapply" element={<Jobapplication/>}></Route>
+        <Route path="/joblisting" element={<Joblisting/>}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
